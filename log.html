@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBUP Notes </title>
+    <link rel="stylesheet" href="index.css">
+   
+</head>
+<body>
+
+    <div class="container">
+        <div class="heading">
+            
+        </div>
+        <div class="main">
+            <div class="mainleft">
+                <img src="New folder/Mobile-login-Cristina-removebg-preview.png" id="img1">
+            </div>
+            <div class="mainright">
+
+                <h1 id="lh"> L<span id="l">ogin</span> </h1>
+                <div class="inp">
+                    <input type="email" id="email" placeholder="Enter Your Email">
+
+                    <input type="password" id="password" placeholder="Enter Your password">
+<div class="lin">   <input type="checkbox" onclick="showpassword()" >Show password     
+    <button id="frog"> reset password</button></div>
+                    <div class="btn">
+                        
+                        
+                        <button id="login">L<span>ogin</span></button>
+                       <a href="new.html"><button id="new"> New <span>User</span></button></a> 
+
+                          
+                    </div>
+                    <p id="pf">*  Enter your email and click on forgot password to reset your Password</p>
+                    
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showpassword(){
+            var x=document.getElementById("password");
+            if(x.type==="password"){
+                x.type="text"
+            }else{
+                x.type="password";
+
+            }}
+
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase/auth"></script>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase/auth"></script>
+
+    <script type="module" >
+
+        
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword , sendPasswordResetEmail  } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyCHPiWo28mcgmDwmSQ7OaDNKvLb3w6_DBc",
+    authDomain: "notes-user.firebaseapp.com",
+    projectId: "notes-user",
+    storageBucket: "notes-user.appspot.com",
+    messagingSenderId: "1065283327239",
+    appId: "1:1065283327239:web:f78f42e7832df43f65a1a2"
+  };
+
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+
+  
+  
+  
+
+  document.getElementById("login").addEventListener('click',(e)=>{
+    var email=document.getElementById("email").value;
+var password=document.getElementById("password").value; 
+
+
+
+signInWithEmailAndPassword(auth, email, password)
+.then((userCredential) => {
+// Signed in 
+const user = userCredential.user;
+alert("Login Successful");
+window.location.replace("main.html")
+// ...
+})
+.catch((error) => {
+const errorCode = error.code;
+const errorMessage = error.message;
+alert(error.message)
+// ..
+});
+  })
+
+
+  document.getElementById("frog").addEventListener('click',()=>{
+var email=document.getElementById("email").value;
+    sendPasswordResetEmail(auth, email)
+  .then(() => {
+  alert("Password reset email sent to your email !");
+    // ..
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+
+
+  })
+
+  document.getElementById("new").addEventListener('click',(e)=>{
+
+  })
+
+
+  
+
+
+</script>
+
+
+
+
+</body>
+</html>

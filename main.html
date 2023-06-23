@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes Home</title>
+    <link rel="stylesheet" href="main.css" />
+
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Diphylleia&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Diphylleia&family=Inter:wght@500&family=Kanit:wght@300&family=Lato:ital,wght@1,700&family=Roboto+Slab&display=swap" rel="stylesheet">
+  
+  
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li><a href="index.html">Home </a></li>
+        <li><a href="https://wa.me/+918767375114"> Help</a></li>
+        <li><a href="mailto:vedmahajan8290@gmail.com">Contact </a></li>
+        <li>
+           <button id="lbtn" >log out</button>
+        </li>
+      </ul>
+    </header>
+
+    <div class="main">
+      <div class="mainleft">
+        <img src="New folder/8262271-removebg-preview.png" id="img1" />
+      </div>
+      <div class="mainright">
+        <h1 id="lstt"> Let's <br>Study </h1>
+
+      </div>
+    </div>
+   
+     
+    </div>
+
+
+    
+    <div class="main1">
+<table id="subtabel">
+  <thead id="sth">
+    <tr>
+      <td> Subjects  Name : </td>
+      <td> Page Links </td>
+    </tr>
+  
+  </thead>
+
+  <tbody id="stb">
+  <tr>
+    <td> C++</td>
+    <td><a href="sub1.html"><button class="stbtn"> Let's Study</button></a></td>
+  </tr>
+
+  <tr>
+    <td> Advanced DBMS</td>
+    <td><a href="sub2.html"><button class="stbtn"> Let's Study</button></a></td>
+  </tr>
+
+  <tr>
+    <td>System Programing & Operating System Concepts</td>
+    <td><a href="sub3.html"><button class="stbtn"> Let's Study</button></a></td>
+  </tr>
+
+  <tr>
+    <td>Software Testing & Quality Assurance </td>
+    <td><a href="sub4.html"><button class="stbtn"> Let's Study</button></a></td>
+  </tr>
+
+  <tr>
+    <td>Computing and Communication Technologies </td>
+    <td><a href="sub5.html"><button class="stbtn"> Let's Study</button></a></td>
+  </tr>
+
+  <tr>
+    <td>Statistical Techniques For Business</td>
+    <td><a href="sub6.html"><button class="stbtn"> Let's Study</button></a></td>
+  </tr>
+
+  <tr>
+    <td>Computer Laboratory</td>
+    <td><a href="sub7.html"><button class="stbtn"> Let's Study</button></a></td>
+  </tr>
+
+</tbody>
+
+</table>
+
+    </div>
+    
+
+    <div class="main2" id="main2">
+     <div class="main21">
+<img src="New folder/5853-removebg-preview.png" img="2" />
+    </div>
+<div class="main22">
+  <h2 class="hk" >“Success isn’t overnight. It’s when  <h1 id="hp">  every day you get a little better than the day before. </h1> It all adds up.”
+<br>
+    ― Dwayne Johnson, actor and former pro-wrestler</h2>
+</div>
+    </div>
+
+   
+
+     <footer>
+      <div class="flf">
+        <h1 id="fl"> SBUP Notes Platform </h1>
+      
+     
+        <p id="fr">© All Right Reserve</p>
+      </div>
+     </footer>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase.js"></script>
+
+     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase/auth"></script>
+
+    <script type="module">
+     
+     
+
+     
+
+     import { initializeApp  } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import {  getAuth, signOut , onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyCHPiWo28mcgmDwmSQ7OaDNKvLb3w6_DBc",
+    authDomain: "notes-user.firebaseapp.com",
+    projectId: "notes-user",
+    storageBucket: "notes-user.appspot.com",
+    messagingSenderId: "1065283327239",
+    appId: "1:1065283327239:web:f78f42e7832df43f65a1a2"
+  };
+
+ 
+
+
+  
+ 
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  
+
+
+ document.getElementById("lbtn").addEventListener('click',(e)=>{
+  const auth = getAuth();
+signOut(auth).then(() => {
+  // Sign-out successful.
+  alert("You are SignOut Successfully")
+  //window.location.replace("index.html")
+}).catch((error) => {
+  // An error happened.
+  alert(error)
+});
+})
+
+/////////
+////////////// main
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+      
+      const uid = user.uid;
+      // ...
+    } else {
+      location.replace("index.html")
+    }
+  });
+
+
+     
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,116 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Diphylleia', serif;
+}
+header{
+   background-color: rgb(76, 76, 146);
+   border-end-start-radius: 50px ;
+   border-end-end-radius: 50px;
+   width: 100vw;
+   padding-top: 10px;
+   
+   height: 65px;
+   margin-top: 15px;
+
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+    font-size: 28px;
+    font-weight: 700;
+  
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#lbtn{
+    background-color: white;
+    color: rgb(76, 76, 146);
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 20px;
+    border-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+}
+.main{
+    display: flex;
+    justify-content: space-around;
+}
+#subtabel{
+    text-align: center;
+    background-color: rgb(105, 105, 209);
+    border-radius: 2px;
+    width: 100%;
+    color: white;
+    font-size: 29px;
+   padding-bottom: 150px;
+   border-top-left-radius: 180px;
+   border-bottom-right-radius:300px ;
+}
+#subtabel td{
+  padding: 20px;
+  font-weight: 800;
+}
+
+.stbtn{
+    background: rgb(196, 35, 89);
+    border-color: transparent;
+    font-size: 25px;
+    border-radius: 30px;
+    color: aliceblue;
+    padding: 13px;
+    cursor: pointer;
+}
+.stbtn:hover{
+    background-color: green;
+    font-size: 31px;
+    transition: 0.3s;
+}
+footer{
+   
+    background-color: rgb(105, 105, 209);
+    width: 100%;
+}
+#fl{
+    font-size: 50px;
+    color: white;
+    padding-top: 80px;
+    padding-bottom: 40px;
+   text-align: center;
+
+}
+#fr{
+    color: aliceblue;
+    padding-bottom: 10px;
+    padding-left: 4px;
+}
+#img1{
+    text-align: center;
+    justify-content: center;
+}
+.main2{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+
+}
+.main22{
+    color: rgb(145, 102, 38);
+    font-size: 28px;
+}
+span{
+    
+  font-size: 40px;
+}
+#lstt{
+    font-size: 100px;
+    color: rgb(145, 102, 38);
+}
